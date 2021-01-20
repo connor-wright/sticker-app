@@ -1,6 +1,16 @@
 import React from "react";
 import Stickers from './Stickers';
 import SearchBar from './SearchBar';
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = ({
+  root: {
+    width: "1920px",
+    height: "1080px",
+    display: "flex",
+    flexDirection: "row"
+  }
+});
 
 //Root for our component tree
 class App extends React.Component {
@@ -15,8 +25,9 @@ class App extends React.Component {
   
   
   render() {
+    const {classes} = this.props;
     return (
-      <div className='AppContainer'>
+      <div className={classes.root}>
         <SearchBar setActiveId={this.setActiveId}/>
         <Stickers activeId={this.state.activeId}/>
       </div>
@@ -24,4 +35,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withStyles(styles)(App);

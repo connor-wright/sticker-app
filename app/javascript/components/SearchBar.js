@@ -1,6 +1,20 @@
 import React from "react";
 import SearchBarResult from "./SearchBarResult";
 import {SearchImgur} from "./BackendAPI";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = ({
+  root: {
+    borderStyle: "solid",
+    padding: "5px",
+    width: "250px",
+    height: "100%",
+    overflow: "auto",
+    img: {
+      padding: "3px"
+    }
+  }
+});
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -45,9 +59,10 @@ class SearchBar extends React.Component {
   }
   
   render () {
+    const {classes} = this.props;
     const {imgs} = this.state;
     return (
-      <div className='SearchBar'>
+      <div className={classes.root}>
         <form onSubmit={this.handleSubmit}>
           <label>
             search:
@@ -72,4 +87,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default SearchBar;
+export default withStyles(styles)(SearchBar);

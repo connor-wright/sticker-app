@@ -1,6 +1,16 @@
 import React from "react";
 import Sticker from "./Sticker";
 import {GetStickers, GetImgurImg, PostSticker} from "./BackendAPI";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = ({
+  root: {
+    width: "100%",
+    height: "100%",
+    padding: "5px",
+    borderStyle: "solid"
+  }
+});
 
 class Stickers extends React.Component {
   constructor(props) {
@@ -76,6 +86,7 @@ class Stickers extends React.Component {
   }
   
   render () {
+    const {classes} = this.props;
     const {error, isLoaded, stickers} = this.state;
     
     if(error){
@@ -86,7 +97,7 @@ class Stickers extends React.Component {
     }
     else{
       return(
-        <div onClick={this.onClick} className="Stickers">
+        <div onClick={this.onClick} className={classes.root}>
           {stickers}
         </div>
       );
@@ -94,4 +105,4 @@ class Stickers extends React.Component {
   }
 }
 
-export default Stickers;
+export default withStyles(styles)(Stickers);

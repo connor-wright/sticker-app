@@ -1,4 +1,18 @@
 import React from "react";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = ({
+  root: {
+    background: "white",
+    position: "aboslute",
+  },
+  stickerImg: {
+    width: "100%",
+    height: "100%",
+    objectFit: "contain"
+  }
+});
+
 class Sticker extends React.Component {
   constructor(props)
   {
@@ -22,7 +36,7 @@ class Sticker extends React.Component {
   }
   
   render () {
-    const {xpos, ypos, url} = this.props;
+    const {xpos, ypos, url, classes} = this.props;
     const {isLoaded} = this.state;
     const dimension = 350;
     
@@ -39,8 +53,8 @@ class Sticker extends React.Component {
     }
     else{
       return (
-        <div style={Stickerstyle} className="sticker">
-          <img className="stickerImg" src={url}/>
+        <div className={classes.root} style={Stickerstyle}>
+          <img className={classes.stickerImg} src={url}/>
           <div>
             xpos: {stickerXpos}
             ypos: {stickerYpos}
@@ -53,4 +67,4 @@ class Sticker extends React.Component {
   }
 }
 
-export default Sticker;
+export default withStyles(styles)(Sticker);
