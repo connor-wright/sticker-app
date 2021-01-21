@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 export function SearchImgur(query){
   return new Promise((resolve, reject) => 
   {

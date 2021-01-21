@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = ({
   root: {
     background: "white",
-    position: "aboslute",
+    position: "absolute",
   },
   stickerImg: {
     width: "100%",

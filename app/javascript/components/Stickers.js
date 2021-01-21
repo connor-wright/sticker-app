@@ -59,6 +59,7 @@ class Stickers extends React.Component {
             ypos: ypos
           };
           //add new img to the db
+          console.log(result);
           PostSticker(sticker).then((response) => {
             AddSticker(response);
           },

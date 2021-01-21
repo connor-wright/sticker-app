@@ -8,6 +8,7 @@ gem 'rails', '~> 6.1.0'
 gem 'react-rails'
 gem 'oj'
 gem 'faraday'
+gem 'figaro'
 # Use postgres as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
