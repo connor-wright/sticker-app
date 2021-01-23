@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_02_214711) do
+ActiveRecord::Schema.define(version: 2021_01_23_001803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_01_02_214711) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "stickers", id: :serial, force: :cascade do |t|
+  create_table "stickers", force: :cascade do |t|
     t.string "img_id"
     t.integer "xpos"
     t.integer "ypos"
