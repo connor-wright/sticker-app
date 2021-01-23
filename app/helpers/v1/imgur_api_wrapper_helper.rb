@@ -5,6 +5,7 @@ module V1::ImgurApiWrapperHelper
       render :json => response.body
       
     else
+      puts response
       render json: 
       {
         :error => errorMsg
